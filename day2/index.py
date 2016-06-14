@@ -20,3 +20,6 @@ bue = -15
 kep = bue.__abs__()
 print(abs(-100))
 print(kep)
+bbq = 1.5
+Abc = bbq.as_integer_ratio()
+print(Abc)
