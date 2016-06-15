@@ -5,8 +5,43 @@ fromkeys把第一个字典里的key取出来重新赋值新生产字典
 get获取字典key对应的valus，如果key不存在的话，可以预先㢟或者返回none
 如果直接用dict{k1}这样去取值的话，如果遇到key不存在话，就会报错
 
-dict_key获取所有的key
-dict_values获取所有的valus
-dict_items先去key，再去valus。生成不同的元祖
+dict.key获取所有的key
+dict.values获取所有的valus
+dict.items先去key，再去valus。生成不同的元祖
 pop
 popitem
+
+'''
+#pop和popitem用法
+dic = {'k1':'v1','k2':'v2','k3':'v3'}
+print(dic.items())
+#pop，指定key删除这组key和values
+dic2 = dic.pop('k1')
+print(dic2)
+print(dic.items())
+#pop.item删除从左到右第一对key-values
+dic3 = dic.popitem()
+print(dic3)
+print(dic.items())
+
+
+
+dict_items([('k1', 'v1'), ('k3', 'v3'), ('k2', 'v2')])
+v1
+dict_items([('k3', 'v3'), ('k2', 'v2')])
+('k3', 'v3')
+dict_items([('k2', 'v2')])
+'''
+
+dict.key获取所有的key
+dict.values获取所有的valus
+dict.items先去key，再取valus。生成不同的元祖
+dic = {'k1':'v1','k2':'v2','k3':'v3'}
+print(dic.keys())
+print(dic.values())
+print(dic.items())
+
+dict_items([('k3', 'v3'), ('k2', 'v2'), ('k1', 'v1')])
+dict_keys(['k3', 'k2', 'k1'])
+dict_values(['v3', 'v2', 'v1'])
+dict_items([('k3', 'v3'), ('k2', 'v2'), ('k1', 'v1')])

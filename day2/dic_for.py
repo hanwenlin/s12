@@ -13,3 +13,5 @@ for i in all_list:                  #for循环去遍历整个列表中的每个�
         else:
             dic['k2'] = []
 print(dic.items())              #输出dic字典的key对应的valus
+
+# dict_items([('k1', [77, 88, 99]), ('k2', [22, 33, 44, 55])])

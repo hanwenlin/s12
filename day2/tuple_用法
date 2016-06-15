@@ -1,3 +1,33 @@
 统计和查询
 count
 index
+
+l1 = [11,22,33,44,55,66,77,88,99,00,100]
+print(type(l1))
+print(l1)
+
+tup1 = tuple(l1)           # 把list转换成tuple
+print(type(tup1))
+print(tup1)
+
+l2 = list(tup1)            # 把tuple转换成list
+l2.append(1000)
+print(type(l2))
+print(l2)
+print(type(str(tuple(tup1)))) # 把tuple转换成str
+print(str(tuple(tup1)))
+
+
+统计
+tup1 = (11,22,33,44,55,66,77,88,99,00,100,11,111)
+print(tup1.count(11))
+2
+查询元素对应的索引位置
+tup1 = (11,22,33,44,55,66,77,88,99,00,100,11,111)
+print(tup1.index(100))
+10
+判断元组是否包含对应的元素
+print(tup1.__contains__(44))
+print(44 in tup1.__iter__())
+True
+True
