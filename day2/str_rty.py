@@ -35,6 +35,104 @@
 # print(len(name))
 #find查找子集,找到返回索引位置。找不到返回-1
 #可以设置起始位置
-name = 'zhangjun'
-result = (name.find('j',start=None))
-print(result)
+# name = 'zhangjjun'
+# result = (name.find('j', 5))
+# print(result)
+#format格式化输出，通过{}占位符，提前设置字符串填充的位置，
+# name = 'zhang\t{}\t{}'
+# result = name.format('jun','sir')
+# print(result)
+#通过变量设置
+# name = 'zhang\t{sed_name}\t{job}'
+# result = name.format(sed_name='jun',job='IT')
+# print(result)
+#index查找子集
+# name = 'zhang'
+# result = name.index('b')
+# print(result)
+# # 如果存在返回子集的索引位置，如果不存在直接报错
+#
+#isalnum意思是如果 string 至少有一个字符并且所有字符都是字母或数字则返回 True,否则返回 False
+# name = '111aaaaa'
+# print(name.isalnum())
+# True
+#下面这个测试 出了字母数字还有标点符号
+# name = 'a..123'
+# print(name.isalnum())
+# False
+#如果string里全部都是字母的话返回真，否则返回假
+# name = '11111aaaaaa'
+# print(name.isalpha())
+# False
+# 下面全部都是字母返回真
+# name ='aaaaaaaaaa'
+# print(name.isalpha())
+# True
+
+# 都是十进制的数字返回真，否则返回假
+# # string = '123123123e'
+# # print(string.isdecimal())
+# # False
+# 下面这个字符串都是十进制的数字，返回真
+# string = '121212120'
+# print(string.isdecimal())
+# False
+
+#如果字符串至少有一个数字。都是数字返回真，否则返回假
+# string = '11'
+# print(string.isdigit())
+# True
+# #判断字符串是否是合法的标识符，字符串仅包含中文字符合法，实际上这里判断的是变量名是否合法。如：
+# print('_a'.isidentifier())
+# print('3a'.isidentifier())
+# print('中国'.isidentifier())
+# True
+# False
+# True
+# 中国 = 111
+# print(type(中国))
+# True
+#判断字符串里是内容是否全部可以打印，意思是否含有转义字符
+# print('aaaaa'.isprintable())   True
+#print('aaaaa\t'.isprintable())   False
+#判断字符串里至少有一个字符且全部为空的话为真，
+# print(' a '.isspace())  False
+# print('  '.isspace())  True
+# 判断字符串每个单词的首字母是否大写。字符串必须至少包含一个字母字符，否则返回False。即使首字母字符前面有非字母字符，如中文、数字、下划线等，也不影响对首字母字符的判断。
+# ‘中国’.istitle() -->False //字符串不包含字母，返回False
+# ‘中国Abc’.istitle() -->True //虽然首字母字符A前面有非字母字符，仍然返回True
+# # ‘-Abc xyz’.istitle() -->False //后一个单词的首字母不是大写，返回False
+#如果字符串至少有一个，且字母全部都是大写，返回真
+# print('1AAA1b'.isupper())
+# print('1AAA1'.isupper())
+#如果字符串至少有一个，且字母全为小写，返回真
+# print('1111a'.islower())
+#str为分隔符，后面的元祖和列表中索引插入分隔符
+# print('a b'.join(['11','22','33']))     11a b22a b33
+# print('a b'.join('112233'))             1a b1a b2a b2a b3a b3
+#返回一个长度为width，左对齐的字符串，最右边填充fillchar，默认为空格。width要大于len(str)，否则返回原字符串。如：
+# print('ab'.ljust(20,'*'))        ab******************
+#把string中所有字母转换为小写
+# print('ABc1'.lower())            abc1
+'''
+str.lstrip([chars])：
+返回一个去除前了导字符的新字符串，chars参数是一个字符串，它包含了所有将要被移除的字符集合。默认为空格。
+注：关于lstrip函数（包括rstrip和strip），网上有很多文章，但都讲的不清不楚。它实际的意思是，从原字符串的最左边开始，匹配chars里包含的所有字符，直至遇到第一个非chars字符为止，原字符串中匹配到的所有字符都被移除。
+‘www.example.com’.lstrip(‘cmowz.’) -->example.com
+从字符串的最左边开始匹配，直至遇到了非chars字符e为止，一共匹配了3个w字符和一个.字符，遇到e匹配结束。
+'xyxxyy testyx yx yyx'.lstrip('xy ') -->'testyx yx yyx'
+从字符串的最左边开始匹配，直至遇到非chars字符t为止，一共匹配了三个x三个y，和一个空格，遇到t匹配结束。
+
+str.rstrip([chars])：
+与str.lstrip()相反，从最右边开始匹配。
+'xyxxyy testyx yx yyx'.rstrip('xy ') -->'xyxxyy test'
+
+str.strip([chars])：
+从字符串的两头开始匹配。
+'xyxxyy testyx yx yyx'.strip('xy ') -->test
+'''
+# print('www.qq.com'.lstrip('cw.'))         qq.com
+# print('www.qq.com'.rstrip('com.w'))       www.qq
+# print('www.qq.com'.strip('com.w'))          qq
+
+
