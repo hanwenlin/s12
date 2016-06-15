@@ -134,5 +134,42 @@ str.strip([chars])：
 # print('www.qq.com'.lstrip('cw.'))         qq.com
 # print('www.qq.com'.rstrip('com.w'))       www.qq
 # print('www.qq.com'.strip('com.w'))          qq
+#大小写互换
+#print('WWW.qq.COM'.swapcase())         www.QQ.com
+#""" 分割， maxsplit最多分割几次 """
+#print('www,qq,com'.split(',',0))
+# splitlines按行分割，输出list
+# string = '''1111111111111
+# 222222222222
+# 3333333333
+# 44444444
+# '''
+# print(string.splitlines())
+# ['1111111111111', '222222222222', '3333333333', '44444444']
+# partition分割，前中后三段
+# str = 'www.qq.com'
+# print(str.partition('.'))
+# 拆分 & 组合类方法：
+# str.partition(sep)：
+# 该方法用于拆分字符串，返回一个包含三个元素的元组。如果未能在原字符串中找到Sep，则元组的三个元素为：原字符串，空串，空串；否则，从原字符串中遇到的第一个Sep字符开始拆分，元组的三个元素为：Sep之前的字符串，Sep字符，Sep之后的字符串；如：
+# 'abcdee'.partition('f') --> ('abcdee', '', '')
+# 'abcdee'.partition('e') --> ('abcd', 'e', 'e')
+#
+# str.rpartition(sep)：
+# 与str.partition()相反，从原字符串的最右边开始拆分，但是同样返回包含三个元素的元组：倒数第一个Sep之前的字符串，Sep字符，Sep之后的字符串。
+# 注意”倒数Sep之前的字符串”，这个之前的字符串，是从原字符串的最左边开始算，并不是最右边。如：
+# 'abcdee'.rpartition('e') --> ('abcde', 'e', '') //拆分的三个元素分别是：倒数第一个e之前的元素，e本身，e之后的元素，此外为空格
+# 'abcdee'.rpartition('f') --> ('', '', 'abcdee') //拆分的三个元素分别是：空格，空格，原字符串
 
-
+# 以指定字母开头，可以指定起始位置
+# string = 'zhangjun'
+# print(string.startswith('h',1,5))
+# True
+#移除两边的空格
+# string = ' zhang jun '
+# print(string.strip())
+# zhang jun
+# str.zfill(width)：
+# 返回一个长度为width的数字字符串，最左边填充0。如果width小于等于原字符串长度，则返回原字符串。主要用于数字类字符串的格式化。如：
+# 'abc'.zfill(5) --> '00abc' //一般不会做这种格式化，没什么意义
+# '123'.zfill(5) --> '00123'
