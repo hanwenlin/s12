@@ -1,0 +1,12 @@
+__init__
+clear清空所有元素
+copy浅拷贝，拷贝一层
+fromkeys把第一个字典里的key取出来重新赋值新生产字典
+get获取字典key对应的valus，如果key不存在的话，可以预先㢟或者返回none
+如果直接用dict{k1}这样去取值的话，如果遇到key不存在话，就会报错
+
+dict_key获取所有的key
+dict_values获取所有的valus
+dict_items先去key，再去valus。生成不同的元祖
+pop
+popitem
