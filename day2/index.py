@@ -16,10 +16,15 @@
 # print(19/10)
 #
 # print(19+10)
-bue = -15
-kep = bue.__abs__()
-print(abs(-100))
-print(kep)
-bbq = 1.5
-Abc = bbq.as_integer_ratio()
-print(Abc)
+# bue = -15
+# kep = bue.__abs__()
+# print(abs(-100))
+# print(kep)
+# bbq = 1.5
+# Abc = bbq.as_integer_ratio()
+# print(Abc)
+
+# list.append
+
+l1 = [11,22,33,44,55,66,77,99,00.1]
+pop(l1)

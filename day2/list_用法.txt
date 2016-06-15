@@ -1,0 +1,144 @@
+# append
+# extend
+# pop
+# reversed
+新建一个list列表
+>>> L = [1,2,3]
+append：在list最后追加一个对象到list
+>>> L.append(4)
+>>> print(L)
+[1, 2, 3, 4]
+>>> L
+[1, 2, 3, 4]
+append：在list后追加可迭代的对象到list
+>>> L.append([4],[5])
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+TypeError: append() takes exactly one argument (2 given)
+上面报错，说明只支持一个参数。如果是追加两个list进去的话，要做为一个整体传参
+>>> L.append([[4],[5]])
+>>> L
+[1, 2, 3, 4, [[4], [5]]]
+>>> L.append([6])
+>>> L
+[1, 2, 3, 4, [[4], [5]], [6]]
+
+list扩展extend
+>>> l1 = [1,2]
+>>> l2 = [3,4]
+下面的做法是两个list相加生成一个新的list。也可以l2 = l1 +l2
+>>> l3 = l1 + l2
+>>> l3
+[1, 2, 3, 4]
+
+新建一个list
+>>> l5 = [11,22,33,44,55,66,11,22,33,44,55,67]
+统计指定的元素出现的次数
+>>> l5.count('1')          #字符串1没有出现过
+0
+>>> l5.count('11')          #字符串11也没有出现过
+0
+>>> l5.count(11)            #数字11出现了两次
+2
+>>> l5.count('6')           #字符串6没有出现过
+0
+index从左到右检索指定的元素出现的索引位置
+>>> l5.index(66)
+5
+index找不到指定的元素直接报错
+>>> l5.index(6)
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+ValueError: 6 is not in list
+list中没有find的方法
+>>> l5.find(6)
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'find'
+>>> l5
+[11, 22, 33, 44, 55, 66, 11, 22, 33, 44, 55, 67]
+在list中指定的索引位置插入元素
+>>> l5.insert(0,zz)
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+NameError: name 'zz' is not defined
+>>> l5.insert(0,'zz')
+>>> l5
+['zz', 11, 22, 33, 44, 55, 66, 11, 22, 33, 44, 55, 67]
+在list指定位置插入元素，-1是指最后一个索引前插入一个元素
+>>> l5.insert(-1,'zz')
+>>> l5
+['zz', 11, 22, 33, 44, 55, 66, 11, 22, 33, 44, 55, 'zz', 67]
+-2是指在倒数第二个索引位置前插入一个元素
+>>> l5.insert(-2,'zz')
+>>> l5
+['zz', 11, 22, 33, 44, 55, 66, 11, 22, 33, 44, 55, 'zz', 'zz', 67]
+如果想要在最后追加一个元素的话，就用append
+>>> l5.append('zz')
+>>> l5
+['zz', 11, 22, 33, 44, 55, 66, 11, 22, 33, 44, 55, 'zz', 'zz', 67, 'zz']
+list.pop删除一个元素，不指定索引位置的话，就是删除最后一个
+>>> l5.pop()
+'zz'
+>>> l5
+['zz', 11, 22, 33, 44, 55, 66, 11, 22, 33, 44, 55, 'zz', 'zz', 67]
+>>> l5.pop()
+67
+>>> l5
+['zz', 11, 22, 33, 44, 55, 66, 11, 22, 33, 44, 55, 'zz', 'zz']
+pop删除最后一个索引，不指定索引位置默认就是-1.-1就代表最后一个索引
+>>> l5.pop(-1)
+'zz'
+>>> l5
+['zz', 11, 22, 33, 44, 55, 66, 11, 22, 33, 44, 55, 'zz']
+删除指定索引位置的元素
+>>> l5.pop(1)
+11
+>>> l5
+['zz', 22, 33, 44, 55, 66, 11, 22, 33, 44, 55, 'zz']
+remove删除指定元素，从左到右的顺序，删除第一个
+>>> l5.remove(22)
+>>> l5
+['zz', 33, 44, 55, 66, 11, 22, 33, 44, 55, 'zz']
+sort排序，要求list内所有的元素都是数字。不能有其他类型的数据，否则直接报错
+>>> l5.sort()
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+TypeError: unorderable types: int() < str()
+>>> l5.pop(1)
+33
+>>> l5.pop(0)
+'zz'
+>>> l5.pop(-1)
+'zz'
+>>> l5
+[44, 55, 66, 11, 22, 33, 44, 55]
+删除非数字类型的元素之后，重新执行sort排序，这样就成功了
+>>> l5.sort()
+>>> l5
+[11, 22, 33, 44, 44, 55, 55, 66]
+reverse倒序
+>>> l5.reverse()
+>>> l5
+[66, 55, 55, 44, 44, 33, 22, 11]
+List通用可以用for ...  in ...来迭代读取
+>>> for n in l5;
+  File "<input>", line 1
+    for n in l5;
+               ^
+SyntaxError: invalid syntax
+>>> for n in l5:
+...     print(n)
+...
+66
+55
+55
+44
+44
+33
+22
+11
+del已经做为list切片的内置语法了
+>>> del l5[0:1]
+>>> l5
+[55, 55, 44, 44, 33, 22, 11]
