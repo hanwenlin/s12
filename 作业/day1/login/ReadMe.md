@@ -2,7 +2,7 @@
 ##初始化
 用户数据库存放格式如user.db:
 
-zhangsan 333
+zhangsan 333<br />
 lisi 44
 
 
