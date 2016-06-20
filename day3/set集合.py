@@ -54,3 +54,4 @@ print(update_list,new_list,del_list)
 # print(s5)
 # # s1.intersection_update(s2)
 # # print(s1)
+#要求，列表元组，字典，中不带下划线的都要会。
