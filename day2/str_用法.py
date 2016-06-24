@@ -1,5 +1,5 @@
 #__contains__是否包含子序列
-# name = 'zhangjun'
+name = 'zhangjun'
 # result = name.__contains__('hang')
 # print(result)
 # capotalize首字符大写
@@ -24,7 +24,7 @@
 # print(result)
 # b'\xd6\xb1\xbd\xd3'
 # 以什么结尾，可以指定起始位
-# result = name.endswith('n',0,4)
+result = name.endswith('n',0,4)
 # print(result)
 #把tab换成空格默认8个空格
 # name = 'a\t lex'
