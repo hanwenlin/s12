@@ -1,0 +1,5 @@
+l1 = iter(['alex','is','sb'])
+print(type(l1))
+print(l1.__next__())
+print(l1.__next__())
+print(l1.__next__())
