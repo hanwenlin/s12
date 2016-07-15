@@ -169,3 +169,20 @@ print(regex.findall(text))
 ['JGood', 'cool']
 #查找所有包含'oo'的单词
 #如果正则只用一次的话效率没什么影响，如果用多次的话，先编译成正则表达式对象这种方法效率更高
+
+# 正则表达式中匹配\的话要用四个\来匹配，python中默认要用\来转义\。正则也需要用\来转义，所有四个\正则匹配出来交给python还剩下两个\
+a=re.search('\\\\','www.run\comoob')
+a.group()
+'\\'
+#用r的意义就是原生字符串的意思
+a=re.search(r'\\','www.run\comoob')
+a
+# <_sre.SRE_Match object; span=(7, 8), match='\\'>
+#例如\d在asiic码中就有特殊功能，要用\d匹配数字的时候就要用r，声明匹配规则中的\d是原生字符串
+# 还有\a
+a=re.search(r'\da','4aaa')
+a
+# <_sre.SRE_Match object; span=(0, 2), match='4a'>
+
+
+
